@@ -11,7 +11,7 @@ services:
       MEMORY: "8G"
       MODE: "survival"
       ONLINE_MODE: "TRUE"
-      ENABLE_WHITELIST: "TRUE"
+      ENABLE_WHITELIST: "FALSE"
       ENABLE_COMMAND_BLOCK: "true"
       MAX_PLAYERS: 20
       MOTD: "Minecraft 26.1.2 Modded Server"

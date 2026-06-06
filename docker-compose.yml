@@ -7,14 +7,14 @@ services:
     environment:
       EULA: "TRUE"
       TYPE: "FABRIC"
-      VERSION: "26.2"
+      VERSION: "26.1.2"
       MEMORY: "8G"
       MODE: "survival"
       ONLINE_MODE: "TRUE"
       ENABLE_WHITELIST: "TRUE"
       ENABLE_COMMAND_BLOCK: "true"
       MAX_PLAYERS: 20
-      MOTD: "Minecraft 26.2 Modded Server"
+      MOTD: "Minecraft 26.1.2 Modded Server"
       DIFFICULTY: "normal"
       RCON_PASSWORD: "minecraft"
       # Automatically remove old mod versions when updating

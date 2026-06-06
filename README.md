@@ -1,15 +1,15 @@
-# Minecraft 26.2 Fabric Server (Docker)
+# Minecraft 26.1.2 NeoForge Server (Docker)
 
 A modded Minecraft server running on `itzg/minecraft-server` with automatic backups via `itzg/mc-backup`.
 
 ## Features
 
-- **Minecraft Version:** 26.2 (Java Edition)
-- **Mod Loader:** Fabric
+- **Minecraft Version:** 26.1.2 (Java Edition)
+- **Mod Loader:** NeoForge
 - **RAM:** 8GB
 - **Mode:** Survival
 - **Online Mode:** Enabled (Mojang auth required)
-- **Whitelist:** Enabled (must add players before connecting)
+- **Whitelist:** Disabled (enable when ready)
 - **Command Blocks:** Enabled
 - **Backups:** Every 30 minutes, stored in `./backups/`
 - **Backup Retention:** 7 days (automatically pruned)
@@ -36,9 +36,8 @@ docker compose down
 
 ## Mods Setup
 
-1. Place Fabric mod `.jar` files into the `./mods/` directory.
-2. **Required for all Fabric servers:** Download [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api) for your version and place it in `./mods/`.
-3. Restart the server:
+1. Place NeoForge mod `.jar` files into the `./mods/` directory.
+2. Restart the server:
 
 ```bash
 docker compose restart mc
@@ -59,12 +58,7 @@ These mods **must** be installed on the server:
 
 ### Important: 26.2 Compatibility Warning
 
-Minecraft 26.2 is very new. As of the latest check:
-- **WorldEdit** does not have a stable 26.2 release yet (latest is 26.1.2)
-- **Effortless Building** does not have a stable 26.2 release yet (latest is 26.1.2)
-- **Fabric API** only has snapshot builds for 26.2
-
-If the server fails to start or mods crash, consider switching to **26.1.2** by editing `VERSION: "26.2"` to `VERSION: "26.1.2"` in `docker-compose.yml`.
+Minecraft 26.1.2 is the latest stable version with full NeoForge and mod support.
 
 ## Whitelist Setup
 
@@ -158,7 +152,7 @@ Edit `docker-compose.yml` to change server settings:
 mc-server/
 ├── docker-compose.yml      # Server and backup configuration
 ├── data/                   # Persistent server data (worlds, configs, whitelist)
-├── mods/                   # Fabric mods (.jar files)
+├── mods/                   # NeoForge mods (.jar files)
 └── backups/                # Automatic backups (created on first run)
 ```
 
@@ -171,15 +165,15 @@ mc-server/
 docker compose logs mc
 
 # Common issues:
-# - Fabric server not available for 26.2 yet -> switch to 26.1.2
 # - Mod conflict -> check logs and remove problematic mods
+# - Wrong mod loader -> ensure mods match NeoForge
 ```
 
 ### Can't connect to server
 
 - Ensure port `25565` is open in your firewall
 - Ensure `ONLINE_MODE: "TRUE"` requires valid Minecraft accounts
-- Ensure players are added to the whitelist
+- Ensure client and server mods use the same mod loader (NeoForge)
 
 ### Backups not running
 

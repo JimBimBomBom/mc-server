@@ -6,7 +6,7 @@ services:
       - "25565:25565"
     environment:
       EULA: "TRUE"
-      TYPE: "FABRIC"
+      TYPE: "NEOFORGE"
       VERSION: "26.1.2"
       MEMORY: "8G"
       MODE: "survival"

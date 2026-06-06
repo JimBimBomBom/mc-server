@@ -17,8 +17,6 @@ services:
       MOTD: "Minecraft 26.1.2 Modded Server"
       DIFFICULTY: "normal"
       RCON_PASSWORD: "minecraft"
-      # Automatically remove old mod versions when updating
-      REMOVE_OLD_MODS: "true"
     volumes:
       - ./data:/data
       - ./mods:/data/mods

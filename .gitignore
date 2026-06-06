@@ -1,0 +1,19 @@
+# Minecraft world data (HUGE, do not commit)
+data/
+backups/
+
+# Mods (download separately, do not commit binaries)
+mods/*.jar
+
+# Docker volumes
+*.tar.gz
+*.zip
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.iml

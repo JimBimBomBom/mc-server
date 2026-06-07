@@ -8,6 +8,10 @@ services:
       EULA: "TRUE"
       TYPE: "NEOFORGE"
       VERSION: "26.1.2"
+      # Pin the exact NeoForge build to match the client. NeoForge requires the
+      # client and server to run the IDENTICAL build number, otherwise the
+      # client is rejected with "Incompatible client! Please use NeoForge x.y.z".
+      NEOFORGE_VERSION: "26.1.2.73"
       MEMORY: "8G"
       MODE: "survival"
       ONLINE_MODE: "TRUE"

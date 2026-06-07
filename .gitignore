@@ -1,8 +1,10 @@
-# Server runtime data (configs, logs, libraries) - regenerated on start
-data/
+# Server runtime data (configs, logs, libraries) - regenerated on start.
+# Anchored with a leading slash so it ONLY matches the repo-root data/
+# directory, NOT world/data/ (which holds the world's dimension settings).
+/data/
 
 # Backups (large archives) - kept locally / on server only
-backups/
+/backups/
 *.tar.gz
 *.zip
 

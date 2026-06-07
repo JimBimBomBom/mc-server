@@ -1,13 +1,17 @@
-# Minecraft world data (HUGE, do not commit)
+# Server runtime data (configs, logs, libraries) - regenerated on start
 data/
+
+# Backups (large archives) - kept locally / on server only
 backups/
-
-# Mods (download separately, do not commit binaries)
-mods/*.jar
-
-# Docker volumes
 *.tar.gz
 *.zip
+
+# Mods are downloaded via mods/download-mods.sh, do not commit binaries
+mods/*.jar
+
+# World runtime / client-generated cruft (the world/ folder itself IS tracked)
+world/session.lock
+**/DistantHorizons.sqlite
 
 # OS files
 .DS_Store

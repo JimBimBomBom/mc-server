@@ -14,11 +14,18 @@ services:
       ENABLE_WHITELIST: "FALSE"
       ENABLE_COMMAND_BLOCK: "true"
       MAX_PLAYERS: 20
-      MOTD: "Minecraft 26.1.2 Modded Server"
+      MOTD: "Ashwake - Survival"
       DIFFICULTY: "normal"
       RCON_PASSWORD: "minecraft"
+      # Name of the world folder inside /data. The tracked ./world directory
+      # is mounted to /data/world below, so this is the world that loads.
+      LEVEL: "world"
     volumes:
+      # Server runtime data (configs, logs, libraries) - NOT tracked in git.
       - ./data:/data
+      # The Ashwake - Survival world, tracked in git for upload/download.
+      - ./world:/data/world
+      # Server-side mods, tracked in git.
       - ./mods:/data/mods
     restart: unless-stopped
     healthcheck:
@@ -40,8 +47,11 @@ services:
       RCON_PASSWORD: "minecraft"
       SERVER_HOST: mc
       PAUSE_IF_NO_PLAYERS: "false"
+      # Only back up the world (matches LEVEL above).
+      INCLUDES: "world"
     volumes:
       - ./data:/data:ro
+      - ./world:/data/world:ro
       - ./backups:/backups
     restart: unless-stopped
     depends_on:
